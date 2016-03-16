@@ -11,7 +11,7 @@ Laravel package that sends mail reporting errors
   ```php
   'providers' => [
       //...
-      'ExceptionMail\ExceptionMailServiceProvider'
+      ExceptionMail\ExceptionMailServiceProvider::class
   ]
   ```
 * Rode o seguinte comando no artisan:
