@@ -1,5 +1,7 @@
 # exception_mail
 Laravel package that sends mail reporting errors
+## Instalação
+ - composer require edilton/exceptionmail dev-master
 
 ## Uso
 * Deve ser configurado o envio de email no Laravel Framework [Veja aqui!](https://laravel.com/docs/5.2/mail).
@@ -17,6 +19,18 @@ Laravel package that sends mail reporting errors
   ```bash
   php artisan vendor:publish
   ```
+* Edit o arquivo config\exeptionmailconfig.php
+    ```php 
+    <?php
+
+return [
+    'app'           => 'Nome da Aplicação',
+    'email'         => 'seuemail@seudomninio.com',
+    'cc'            => ['fulano@dominio.com'],
+    'active'        =>  env('APP_ENV', 'production')
+];
+  ```
+
   
 * Altere o arquivo  App\Exception\Handle.php para :
     ```php 
