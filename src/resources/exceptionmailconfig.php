@@ -2,8 +2,8 @@
 
 return [
     'app'           => 'Nome da Aplicação',
-    'email'         => 'ediltondanniken@gmail.com',
-    'cc'            => ['ediltondanniken@hotmail.com'],
-    'active'       => env('APP_ENV', 'production')
+    'email'         => 'seuemail@dominio.com',
+    'cc'            => ['emailequipe@dominio.com'],
+    'active'        => env('APP_ENV', 'production')
 ];
 
