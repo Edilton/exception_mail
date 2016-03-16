@@ -8,7 +8,11 @@
             "email": "ediltondanniken@gmail.com"
         }
     ],
-    "require": {},
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.1.*"
+        },
     "autoload": {
        
         "psr-4": {

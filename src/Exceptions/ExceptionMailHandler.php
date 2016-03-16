@@ -2,9 +2,9 @@
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use SendMail;
 
-class ExceptionMailHandler extends ExceptionHandler {
+class ExceptionMailHandler extends ExceptionHandler 
+{
     
 
     /**
@@ -16,8 +16,10 @@ class ExceptionMailHandler extends ExceptionHandler {
      */
     public function render($request, Exception $e)
     {
-        $send = new SendMail();
-        $send->send($e);        
+        if(config('exeptionmailconfig.active') == 'production') { 
+            $send = new SendMail();
+            $send->send($e);        
+        }
         return parent::render($request, $e);
     }
 
