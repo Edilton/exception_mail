@@ -69,7 +69,7 @@
     {{-- Table Request --}}
     <table>
         <tr>
-            <td>
+            <td colspan="2">
                 <h4>Request</h4>
             </td>
         </tr>
