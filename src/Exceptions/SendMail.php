@@ -19,7 +19,7 @@ class SendMail
    {
         $this->data['e'] = $e;
         Mail::send('exceptionmail::exception',['data' =>  $this->data], function ($message) use($e){
-            $message->to(config('exeptionmailconfig.email'))->subject($e->getstatusCode());
+            $message->to(config('exeptionmailconfig.email'))->subject('Errors');
             foreach (config('exeptionmailconfig.cc') as $email) {
                $message->cc($email);
             }
