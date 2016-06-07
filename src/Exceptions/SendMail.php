@@ -4,8 +4,8 @@ use  Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use  Illuminate\Support\Facades\Request;
 use  Illuminate\Support\Facades\Session;
-    
-class SendMail 
+
+class SendMail
 {
    protected $data = [];
 
@@ -16,10 +16,10 @@ class SendMail
    }
 
    public function send($e)
-   { 
+   {
         $this->data['e'] = $e;
         Mail::send('exceptionmail::exception',['data' =>  $this->data], function ($message) use($e){
-            $message->to(config('exeptionmailconfig.email'))->subject($e->getMessage());
+            $message->to(config('exeptionmailconfig.email'))->subject($e->getstatusCode());
             foreach (config('exeptionmailconfig.cc') as $email) {
                $message->cc($email);
             }
@@ -30,7 +30,7 @@ class SendMail
    public function setData()
    {
         $this->data['request']  = Request::all();
-        $this->data['header']   = [ 'header' => Request::header(), 
+        $this->data['header']   = [ 'header' => Request::header(),
                                     'url' => Request::fullUrl(),
                                     'ip' =>  Request::ip() ];
         $this->data['session']  = Session::all();
