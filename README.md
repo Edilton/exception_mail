@@ -1,4 +1,4 @@
-# exception_mail
+# exception_mail [Depreciado]
 Laravel package that sends mail reporting errors
 ## Instalação
  - composer require edilton/exceptionmail dev-master
